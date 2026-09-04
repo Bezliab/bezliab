@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Collage — designer hero visual
+   Two staggered columns of work. Square corners, thin borders, no shadows
+   competing with the artwork.
+   ========================================================================== */
+
+.collage {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(12px, 1.6vw, 20px);
+  align-items: start;
+}
+
+.collage__col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 20px);
+  min-width: 0;
+}
+
+/* the editorial stagger */
+.collage__col--trail {
+  padding-top: clamp(24px, 6vw, 72px);
+}
+
+.collage__frame {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 24px 48px -30px rgba(17, 17, 17, 0.4);
+}
+
+.collage__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(17, 17, 17, 0.07);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ---------- brand artefact ---------- */
+.collage__specimen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(16px, 2vw, 24px);
+  border-radius: var(--radius-card);
+  background: var(--highlight);
+  color: var(--black);
+}
+
+.collage__specimen-glyph {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+.collage__specimen-meta {
+  font-family: var(--font-sans);
+  font-size: var(--step-tiny);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.collage__swatches {
+  display: inline-flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.collage__swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.collage__swatch--green {
+  background: var(--bezliab-green);
+}
+
+.collage__swatch--yellow {
+  background: var(--yellow-200);
+}
+
+.collage__swatch--paper {
+  background: var(--bezliab-white);
+}
+
+@media (max-width: 640px) {
+  .collage {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .collage__col--trail {
+    padding-top: 32px;
+  }
+
+  .collage__specimen {
+    gap: 6px;
+  }
+}

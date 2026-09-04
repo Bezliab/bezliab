@@ -1,0 +1,80 @@
+/* ==========================================================================
+   ModeSwitch — Developer ⇄ Designer, always available
+   ========================================================================== */
+
+.mode-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+}
+
+.mode-switch__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: var(--step-xs);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color var(--dur) var(--ease);
+}
+
+.mode-switch__item:hover {
+  color: var(--text);
+}
+
+.mode-switch__item[data-active] {
+  color: var(--accent-contrast);
+}
+
+.mode-switch__indicator {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+}
+
+.mode-switch__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- inside the mobile menu ---------- */
+.mode-switch--stack {
+  width: 100%;
+  padding: 4px;
+}
+
+.mode-switch--stack .mode-switch__item {
+  flex: 1;
+  justify-content: center;
+  padding: 13px 16px;
+  font-size: var(--step-sm);
+}
+
+/* ---------- on the landing page's dark ground ---------- */
+[data-mode='landing'] .mode-switch {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-mode='landing'] .mode-switch__item[data-active] {
+  color: var(--highlight-contrast);
+}
+
+[data-mode='landing'] .mode-switch__indicator {
+  background: var(--highlight);
+}
+
+@media (max-width: 460px) {
+  .mode-switch--bar .mode-switch__item {
+    padding: 7px 12px;
+    font-size: var(--step-tiny);
+  }
+}

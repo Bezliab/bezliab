@@ -1,0 +1,117 @@
+/* ==========================================================================
+   MobileMenu — the small-screen navigation, designed rather than shrunk
+   ========================================================================== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  background: rgba(10, 20, 14, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+
+.mobile-menu__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 20px var(--container-padding) 32px;
+  background: var(--background);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mobile-menu__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.mobile-menu__close:hover {
+  background: var(--text);
+  color: var(--background);
+  transform: rotate(90deg);
+}
+
+/* ---------- section links ---------- */
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  color: var(--text-strong);
+  transition: color var(--dur) var(--ease), padding-left var(--dur) var(--ease);
+}
+
+.mobile-menu__link svg {
+  flex: none;
+  opacity: 0;
+  color: var(--accent);
+  transform: translateX(-8px);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link[data-active] {
+  color: var(--accent);
+  padding-left: 8px;
+}
+
+.mobile-menu__link:hover svg,
+.mobile-menu__link[data-active] svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- foot ---------- */
+.mobile-menu__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.mobile-menu__email {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-sm);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  color: var(--muted);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2px;
+}
+
+.mobile-menu__email:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}

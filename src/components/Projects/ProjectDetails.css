@@ -1,0 +1,208 @@
+/* ==========================================================================
+   ProjectDetails — shared shell for both case-study shapes
+   ========================================================================== */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.5vw, 64px);
+}
+
+.details__cover {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.details__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 72px);
+  align-items: start;
+}
+
+.details__main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 36px);
+}
+
+.details__block p {
+  color: var(--muted);
+  font-size: var(--step-0);
+  line-height: 1.66;
+  max-width: 62ch;
+}
+
+.details__lead {
+  font-size: var(--step-1) !important;
+  color: var(--text) !important;
+  line-height: 1.55 !important;
+}
+
+.details__label {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.details__mono {
+  font-family: var(--font-mono) !important;
+  font-size: var(--step-sm) !important;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ---------- lists ---------- */
+.details__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px 28px;
+}
+
+.details__features li,
+.details__list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: var(--step-sm);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.details__features li::before,
+.details__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 1.5px;
+  background: var(--accent);
+}
+
+.details__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---------- aside ---------- */
+.details__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: clamp(20px, 2.4vw, 28px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  position: sticky;
+  top: 20px;
+}
+
+.details__facts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+}
+
+.details__facts dt {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.details__facts dd {
+  margin: 0;
+  font-size: var(--step-sm);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.details__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.details__links .btn {
+  flex: 1 1 auto;
+}
+
+/* ---------- galleries ---------- */
+.details__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.details__gallery-grid > * {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+/* design mode: one plate after another, big */
+.details__plates {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.4vw, 32px);
+}
+
+.details__plates > * {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+/* ---------- process ---------- */
+.details__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  counter-reset: step;
+}
+
+.details__steps li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.details__step-index {
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  color: var(--accent);
+}
+
+.details__step-title {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  color: var(--text-strong);
+}
+
+.details__step-body {
+  font-size: var(--step-sm);
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .details__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details__aside {
+    position: static;
+  }
+}

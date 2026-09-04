@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Contact — form on the left, direct lines on the right
+   ========================================================================== */
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  margin-top: clamp(40px, 6vw, 72px);
+  align-items: start;
+}
+
+/* ---------- form ---------- */
+.contact__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* the long fields span both columns */
+.field:nth-child(3),
+.field:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-size: var(--step-0);
+  color: var(--text);
+  transition: border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 132px;
+  line-height: 1.55;
+}
+
+.field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(50% + 2px),
+    calc(100% - 14px) calc(50% + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 42px;
+  cursor: pointer;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: var(--yellow-700);
+  background: var(--yellow-100);
+}
+
+.field__error {
+  font-size: var(--step-xs);
+  color: var(--yellow-700);
+  font-weight: 600;
+}
+
+.contact__submit {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.contact__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  color: var(--muted);
+}
+
+/* ---------- direct ---------- */
+.contact__direct {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 36px);
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.contact__block-title {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.contact__email {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  color: var(--text-strong);
+  border-bottom: 2px solid var(--highlight);
+  padding-bottom: 2px;
+  word-break: break-all;
+  transition: color var(--dur) var(--ease);
+}
+
+.contact__email:hover {
+  color: var(--accent);
+}
+
+.contact__note {
+  font-size: var(--step-sm);
+  color: var(--muted);
+}
+
+.contact__note--accent {
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact__form {
+    grid-template-columns: 1fr;
+  }
+
+  .field:nth-child(3),
+  .field:nth-child(4) {
+    grid-column: 1;
+  }
+
+  .contact__submit .btn {
+    width: 100%;
+  }
+}

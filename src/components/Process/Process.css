@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Process — four steps, editorial
+   ========================================================================== */
+
+.process__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(40px, 6vw, 76px);
+}
+
+.process__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 22px;
+  border-top: 2px solid var(--border-color);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.process__step:hover {
+  border-top-color: var(--highlight);
+}
+
+.process__index {
+  font-family: var(--font-sans);
+  font-size: var(--step-tiny);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.process__title {
+  font-size: var(--step-2);
+  max-width: 10ch;
+}
+
+.process__body {
+  font-size: var(--step-sm);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* a staggered baseline so four equal columns still read editorially */
+.process__step:nth-child(even) {
+  margin-top: clamp(0px, 3vw, 40px);
+}
+
+@media (max-width: 900px) {
+  .process__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, 4vw, 40px);
+  }
+
+  .process__step:nth-child(even) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .process__list {
+    grid-template-columns: 1fr;
+  }
+
+  .process__title {
+    max-width: none;
+  }
+}

@@ -1,0 +1,169 @@
+/* ==========================================================================
+   ProjectCard
+   The covering button pattern: .project-card__button::after stretches over
+   the whole card, so the entire surface is clickable while the DOM stays
+   semantic (heading + button, not a clickable div).
+   ========================================================================== */
+
+.project-card {
+  position: relative;
+  min-width: 0;
+}
+
+.project-card__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-card__media {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* the one image move on the site (spec §35) */
+.project-card__media .media__img,
+.project-card__media .media__fallback {
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.project-card:hover .media__img,
+.project-card:hover .media__fallback {
+  transform: scale(1.03);
+}
+
+/* ---------- text ---------- */
+.project-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.project-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-card__dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.project-card__status {
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--highlight);
+  color: var(--highlight-contrast);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.project-card__title {
+  font-size: var(--step-2);
+  line-height: 1.05;
+}
+
+.project-card__button {
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  transition: color var(--dur) var(--ease);
+}
+
+.project-card__button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+  z-index: 4;
+}
+
+.project-card:hover .project-card__button {
+  color: var(--accent);
+}
+
+.project-card__description {
+  font-size: var(--step-sm);
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 2px;
+}
+
+.project-card__tech li {
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  color: var(--muted);
+}
+
+.project-card__services {
+  font-family: var(--font-sans);
+  font-size: var(--step-tiny);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Size variants — the featured grid keeps the type in proportion
+   -------------------------------------------------------------------------- */
+.project-card--full .project-card__title,
+.project-card--wide .project-card__title {
+  font-size: var(--step-3);
+}
+
+.project-card--narrow .project-card__title {
+  font-size: var(--step-1);
+}
+
+.project-card--full .project-card__text {
+  max-width: 62ch;
+}
+
+/* --------------------------------------------------------------------------
+   Design cards — artwork first, text minimal and quiet
+   -------------------------------------------------------------------------- */
+.project-card--design .project-card__inner {
+  gap: 12px;
+}
+
+.project-card--design .project-card__title {
+  font-size: var(--step-1);
+}
+
+.project-card--design.project-card--full .project-card__title,
+.project-card--design.project-card--wide .project-card__title {
+  font-size: var(--step-2);
+}
+
+[data-mode='designer'] .project-card__meta {
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .project-card__title,
+  .project-card--full .project-card__title,
+  .project-card--wide .project-card__title {
+    font-size: var(--step-2);
+  }
+}

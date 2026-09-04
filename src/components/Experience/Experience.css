@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Experience — vertical timeline
+   ========================================================================== */
+
+.timeline {
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: clamp(16px, 2.4vw, 32px);
+}
+
+/* ---------- the rail ---------- */
+.timeline__marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline__marker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-color);
+}
+
+/* the rail stops at the last dot rather than running off into the section */
+.timeline__item:first-child .timeline__marker::before {
+  top: 12px;
+}
+
+.timeline__item:last-child .timeline__marker::before {
+  bottom: auto;
+  height: 12px;
+}
+
+.timeline__dot {
+  position: relative;
+  z-index: 1;
+  width: 11px;
+  height: 11px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 2px solid var(--border-color);
+  transition: border-color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.timeline__item:first-child .timeline__dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.timeline__item:hover .timeline__dot {
+  border-color: var(--accent);
+}
+
+/* ---------- content ---------- */
+.timeline__content {
+  padding-bottom: clamp(36px, 5vw, 56px);
+  min-width: 0;
+}
+
+.timeline__period {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.timeline__role {
+  font-size: var(--step-2);
+  margin-bottom: 6px;
+}
+
+.timeline__company {
+  color: var(--muted);
+  font-weight: inherit;
+}
+
+.timeline__meta {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.timeline__body {
+  color: var(--muted);
+  line-height: 1.62;
+  max-width: 62ch;
+  margin-bottom: 14px;
+}
+
+.timeline__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.timeline__highlights li {
+  position: relative;
+  padding-left: 18px;
+  font-size: var(--step-sm);
+  color: var(--text);
+}
+
+.timeline__highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 1.5px;
+  background: var(--highlight);
+}
+
+/* ---------- certifications ---------- */
+.certificates {
+  margin-top: clamp(24px, 4vw, 48px);
+  padding-top: clamp(28px, 4vw, 44px);
+  border-top: 1px solid var(--border-color);
+}
+
+.certificates__title {
+  font-size: var(--step-1);
+  margin-bottom: 20px;
+}
+
+.certificates__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.certificate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  background: var(--surface-2);
+}
+
+.certificate__name {
+  font-weight: 700;
+  font-size: var(--step-sm);
+}
+
+.certificate__issuer {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.certificate__link {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--muted);
+  transition: color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.certificate__link:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+@media (max-width: 560px) {
+  .timeline__item {
+    grid-template-columns: 20px 1fr;
+    gap: 14px;
+  }
+
+  .timeline__role {
+    font-size: var(--step-1);
+  }
+}

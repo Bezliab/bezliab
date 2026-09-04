@@ -1,0 +1,41 @@
+/* ==========================================================================
+   ProjectModal — the case-study overlay
+   The modal shell handles scroll lock, focus and ESC; this file is only
+   the header type and the content measure.
+   ========================================================================== */
+
+.project-modal__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.project-modal__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-modal__title {
+  font-size: var(--step-2);
+  line-height: 1.05;
+}
+
+/* The panel variant of the modal shell has no horizontal padding, so the
+   content sets its own — matched to the sticky bar so the title above lines
+   up with the copy below. */
+.project-modal__content {
+  padding: clamp(24px, 3.4vw, 44px) clamp(18px, 3vw, 36px) 0;
+}
+
+@media (max-width: 560px) {
+  .project-modal__title {
+    font-size: var(--step-1);
+  }
+}

@@ -1,0 +1,46 @@
+/* ==========================================================================
+   404
+   ========================================================================== */
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(40px, 8vh, 96px);
+  min-height: 100dvh;
+  padding: clamp(20px, 3vw, 36px) var(--container-padding);
+  background: var(--background);
+  color: var(--text);
+}
+
+.notfound__body {
+  max-width: 56ch;
+  margin-block: auto;
+}
+
+.notfound__code {
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  letter-spacing: 0.2em;
+  color: var(--highlight);
+  margin-bottom: 18px;
+}
+
+.notfound__title {
+  font-size: var(--step-5);
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.notfound__support {
+  color: var(--muted);
+  font-size: var(--step-1);
+  line-height: 1.55;
+  margin-bottom: 32px;
+}
+
+.notfound__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

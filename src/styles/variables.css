@@ -1,0 +1,185 @@
+/* ==========================================================================
+   BEZLIAB — Design tokens
+   One brand foundation, two accent systems.
+
+   Shared:    background / surface / text / muted / border / typography / spacing
+   Developer: green-led, structured, monospace metadata, precise
+   Designer:  yellow-led, editorial, expressive scale, image-first
+
+   The two modes are deliberately NOT two different websites. They share every
+   neutral, the type system, the grid and the navigation. Only the accent,
+   the display scale and a handful of treatment switches change.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand ---------- */
+  --bezliab-green: #006838;
+  --bezliab-yellow: #f5e862; /* the brand doc calls this "teal"; the hex is a yellow */
+  --bezliab-teal: var(--bezliab-yellow); /* alias kept for brand-doc parity */
+  --bezliab-white: #ffffff;
+
+  /* Derived brand ramp */
+  --green-950: #00190d;
+  --green-900: #002e19;
+  --green-800: #004a28;
+  --green-700: #006838;
+  --green-600: #008145;
+  --green-500: #0a9c56;
+  --green-100: #d7e8de;
+  --green-050: #eef5f1;
+
+  --yellow-700: #a99c1f;
+  --yellow-600: #d9cb3a;
+  --yellow-500: #f5e862;
+  --yellow-200: #fbf6c9;
+  --yellow-100: #fdfbe4;
+
+  /* ---------- Neutrals ---------- */
+  --black: #111111;
+  --dark: #1a1a1a;
+  --gray: #6b6b6b;
+  --light-gray: #f5f5f2;
+  --border: #e5e5e5;
+
+  /* ---------- Semantic surface (defaults; overridden per mode) ---------- */
+  --background: var(--bezliab-white);
+  --surface: var(--light-gray);
+  --surface-2: #ffffff;
+  --text: var(--black);
+  --text-strong: #000000;
+  --muted: var(--gray);
+  --border-color: var(--border);
+  --inverse-bg: var(--green-900);
+  --inverse-text: #ffffff;
+  --inverse-muted: rgba(255, 255, 255, 0.62);
+  --inverse-border: rgba(255, 255, 255, 0.16);
+
+  /* ---------- Accent (overridden per mode) ---------- */
+  --accent: var(--bezliab-green);
+  --accent-strong: var(--green-800);
+  --accent-soft: var(--green-050);
+  --accent-contrast: #ffffff;
+  --highlight: var(--bezliab-yellow);
+  --highlight-contrast: var(--black);
+  --focus-ring: var(--bezliab-green);
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Bricolage Grotesque', 'Manrope', system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+
+  /* Fluid scale — 320px → 1440px */
+  --step-tiny: 0.6875rem; /* 11px, fixed: eyebrows / metadata */
+  --step-xs: clamp(0.75rem, 0.73rem + 0.09vw, 0.8125rem);
+  --step-sm: clamp(0.875rem, 0.85rem + 0.11vw, 0.9375rem);
+  --step-0: clamp(1rem, 0.97rem + 0.16vw, 1.0625rem);
+  --step-1: clamp(1.125rem, 1.06rem + 0.31vw, 1.3125rem);
+  --step-2: clamp(1.375rem, 1.24rem + 0.63vw, 1.75rem);
+  --step-3: clamp(1.75rem, 1.5rem + 1.16vw, 2.5rem);
+  --step-4: clamp(2.25rem, 1.75rem + 2.32vw, 3.75rem);
+  --step-5: clamp(2.75rem, 1.8rem + 4.46vw, 5.5rem);
+  --step-6: clamp(3.25rem, 1.6rem + 7.68vw, 8rem);
+
+  --display-tracking: -0.035em;
+  --display-weight: 700;
+  --display-leading: 0.96;
+
+  /* ---------- Layout ---------- */
+  --max-width: 1280px;
+  --max-width-text: 68ch;
+  --section-padding: clamp(72px, 9vw, 120px);
+  --container-padding: clamp(20px, 4vw, 32px);
+  --gutter: clamp(16px, 2.4vw, 32px);
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  /* Designer mode squares these off — see [data-mode="designer"] */
+  --radius-card: var(--radius-md);
+
+  /* ---------- Elevation ---------- */
+  --shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.05);
+  --shadow-md: 0 12px 32px -12px rgba(17, 17, 17, 0.16);
+  --shadow-lg: 0 40px 80px -32px rgba(17, 17, 17, 0.28);
+
+  /* ---------- Motion ---------- */
+  --dur-fast: 160ms;
+  --dur: 280ms;
+  --dur-slow: 620ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---------- Z-index ---------- */
+  --z-nav: 100;
+  --z-menu: 200;
+  --z-modal: 300;
+  --z-modal-nested: 310;
+  --z-cursor: 400;
+}
+
+/* ==========================================================================
+   DEVELOPER MODE — precise / technical / structured
+   ========================================================================== */
+[data-mode='developer'] {
+  --background: var(--bezliab-white);
+  --surface: var(--light-gray);
+  --accent: var(--bezliab-green);
+  --accent-strong: var(--green-800);
+  --accent-soft: var(--green-050);
+  --accent-contrast: #ffffff;
+  --highlight: var(--bezliab-yellow);
+  --highlight-contrast: var(--black);
+  --focus-ring: var(--bezliab-green);
+  --meta-font: var(--font-mono);
+  --meta-tracking: 0.02em;
+  --display-weight: 700;
+  --display-tracking: -0.035em;
+  --radius-card: var(--radius-md);
+}
+
+/* ==========================================================================
+   DESIGNER MODE — editorial / visual / expressive
+   Same neutrals, same type, same nav. Yellow leads, edges square off,
+   the display scale opens up and images get more room.
+   ========================================================================== */
+[data-mode='designer'] {
+  --background: #fbfaf4; /* warm paper */
+  --surface: #f2efe4;
+  --surface-2: #ffffff;
+  --accent: var(--bezliab-green);
+  --accent-strong: var(--green-900);
+  --accent-soft: var(--yellow-100);
+  --accent-contrast: #ffffff;
+  --highlight: var(--bezliab-yellow);
+  --highlight-contrast: var(--black);
+  --border-color: #e3ded0;
+  --focus-ring: var(--green-800);
+  --meta-font: var(--font-sans);
+  --meta-tracking: 0.16em;
+  --display-weight: 600;
+  --display-tracking: -0.045em;
+  --display-leading: 0.92;
+  --radius-card: 2px;
+}
+
+/* ==========================================================================
+   LANDING — the shared entrance, owned by neither mode
+   ========================================================================== */
+[data-mode='landing'] {
+  --background: var(--green-950);
+  --surface: var(--green-900);
+  --text: #ffffff;
+  --text-strong: #ffffff;
+  --muted: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.14);
+  --accent: var(--bezliab-yellow);
+  --accent-contrast: var(--black);
+  --highlight: var(--bezliab-yellow);
+  --focus-ring: var(--bezliab-yellow);
+  --meta-font: var(--font-mono);
+  --meta-tracking: 0.14em;
+}

@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Work section
+   ========================================================================== */
+
+.work__grid {
+  margin-top: clamp(40px, 6vw, 76px);
+}
+
+.work__more {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: clamp(44px, 6vw, 80px);
+  padding-top: clamp(28px, 4vw, 44px);
+  border-top: 1px solid var(--border-color);
+}
+
+.work__count {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Designer mode centres the invitation — a gallery gesture rather than
+   a "next page" control. */
+[data-mode='designer'] .work__more {
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .work__more .btn {
+    width: 100%;
+  }
+}

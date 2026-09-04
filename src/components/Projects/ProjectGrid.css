@@ -1,0 +1,94 @@
+/* ==========================================================================
+   ProjectGrid — 6 columns, asymmetric by design
+   ========================================================================== */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(28px, 4vw, 56px) clamp(20px, 2.6vw, 40px);
+}
+
+.project-grid__cell {
+  min-width: 0;
+}
+
+.project-grid__cell--full {
+  grid-column: span 6;
+}
+
+.project-grid__cell--wide {
+  grid-column: span 4;
+}
+
+.project-grid__cell--half {
+  grid-column: span 3;
+}
+
+.project-grid__cell--narrow {
+  grid-column: span 2;
+}
+
+/* the tall/narrow card sits low, so the row reads as a composition
+   rather than two tops aligned */
+.project-grid--featured .project-grid__cell--narrow {
+  align-self: end;
+}
+
+/* ---------- browse (inside the modal) ---------- */
+.project-grid--browse {
+  grid-auto-flow: row dense;
+  gap: clamp(24px, 3vw, 40px) clamp(18px, 2vw, 28px);
+}
+
+.project-grid--browse .project-grid__cell--half {
+  grid-column: span 2;
+}
+
+.project-grid--browse .project-grid__cell--wide {
+  grid-column: span 3;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — spans are always re-declared explicitly so nothing can
+   overflow into an implicit column
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .project-grid__cell--full,
+  .project-grid__cell--wide {
+    grid-column: span 4;
+  }
+
+  .project-grid__cell--half,
+  .project-grid__cell--narrow,
+  .project-grid--browse .project-grid__cell--half {
+    grid-column: span 2;
+  }
+
+  .project-grid--browse .project-grid__cell--wide {
+    grid-column: span 4;
+  }
+
+  .project-grid--featured .project-grid__cell--narrow {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 8vw, 44px);
+  }
+
+  .project-grid__cell--full,
+  .project-grid__cell--wide,
+  .project-grid__cell--half,
+  .project-grid__cell--narrow,
+  .project-grid--browse .project-grid__cell--half,
+  .project-grid--browse .project-grid__cell--wide {
+    grid-column: span 1;
+  }
+}

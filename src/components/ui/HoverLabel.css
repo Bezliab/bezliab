@@ -1,0 +1,34 @@
+.hover-label {
+  position: relative;
+}
+
+.hover-label.is-enabled {
+  cursor: none;
+}
+
+.hover-label__chip {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 15px;
+  border-radius: var(--radius-pill);
+  background: var(--highlight);
+  color: var(--highlight-contrast);
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 24px -8px rgba(17, 17, 17, 0.4);
+}
+
+[data-mode='designer'] .hover-label__chip {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}

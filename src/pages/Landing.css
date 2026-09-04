@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Landing — the shared entrance
+   Dark green ground, yellow accent, one statement, two doors.
+   ========================================================================== */
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: clamp(20px, 3vw, 36px) var(--container-padding);
+  gap: clamp(28px, 4vh, 56px);
+  background: var(--background);
+  color: var(--text);
+}
+
+/* a very soft radial lift behind the type — no gradient banding, no image */
+.landing::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    80% 60% at 50% 0%,
+    rgba(245, 232, 98, 0.07),
+    transparent 70%
+  );
+}
+
+/* ---------- top bar ---------- */
+.landing__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: var(--max-width);
+  width: 100%;
+  margin-inline: auto;
+}
+
+.landing__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 32px);
+}
+
+.landing__nav-link {
+  font-size: var(--step-sm);
+  font-weight: 600;
+  color: var(--muted);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.landing__nav-link:hover {
+  color: var(--text);
+  border-bottom-color: var(--highlight);
+}
+
+/* ---------- centre ---------- */
+.landing__main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(36px, 6vh, 72px);
+  max-width: var(--max-width);
+  width: 100%;
+  margin-inline: auto;
+}
+
+.landing__intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 2.4vh, 28px);
+}
+
+.landing__headline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 clamp(14px, 2vw, 28px);
+  font-size: var(--step-6);
+  color: var(--text);
+  margin: 0;
+}
+
+.landing__line {
+  display: inline-block;
+}
+
+/* the third statement carries the yellow — one accent, once */
+.landing__line:last-child {
+  color: var(--highlight);
+}
+
+.landing__support {
+  max-width: 62ch;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ---------- the two doors ---------- */
+/* flex: 1 so the doors take the leftover height rather than sitting as two
+   short bars under the statement — they are the page, so they should be big
+   (spec §3). choice__body then pushes each action link to the card's floor. */
+.landing__choices {
+  display: flex;
+  flex: 1;
+  gap: clamp(12px, 1.6vw, 20px);
+  min-height: clamp(240px, 40vh, 440px);
+}
+
+.choice {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(24px, 2.8vw, 40px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  transition: flex-grow var(--dur-slow) var(--ease),
+    background-color var(--dur-slow) var(--ease),
+    border-color var(--dur-slow) var(--ease), opacity var(--dur-slow) var(--ease);
+}
+
+/* the chosen side expands, the other recedes and darkens (spec §3) */
+.choice[data-state='active'] {
+  flex-grow: 1.4;
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.choice[data-state='muted'] {
+  flex-grow: 0.8;
+  opacity: 0.42;
+}
+
+.choice__index {
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.choice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.choice__title {
+  font-family: var(--font-display);
+  /* its own scale rather than a step: big enough to read as a door, small
+     enough that "SOFTWARE DEVELOPER" still fits a half-width card */
+  font-size: clamp(1.75rem, 1.25rem + 2.2vw, 3rem);
+  font-weight: var(--display-weight);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.choice__blurb {
+  font-size: var(--step-1);
+  color: var(--muted);
+  max-width: 30ch;
+  line-height: 1.5;
+}
+
+.choice__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--step-sm);
+  font-weight: 700;
+  color: var(--highlight);
+  transition: gap var(--dur) var(--ease);
+}
+
+.choice:hover .choice__action {
+  gap: 16px;
+}
+
+/* a hairline that fills across the card on hover — the only decoration */
+.choice::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--highlight);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.choice[data-state='active']::after {
+  transform: scaleX(1);
+}
+
+/* ---------- foot ---------- */
+.landing__foot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: var(--max-width);
+  width: 100%;
+  margin-inline: auto;
+}
+
+.landing__copy {
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile — stacked, and designed for the phone rather than squeezed
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .landing {
+    min-height: 100dvh;
+    gap: 36px;
+  }
+
+  .landing__headline {
+    font-size: var(--step-5);
+  }
+
+  .landing__choices {
+    flex-direction: column;
+    /* stop the doors eating the phone viewport — content height, not fill */
+    flex: 0 0 auto;
+    min-height: 0;
+  }
+
+  /* no expansion on touch — the cards are already full width */
+  .choice[data-state='active'],
+  .choice[data-state='muted'] {
+    flex-grow: 1;
+    opacity: 1;
+  }
+
+  .choice {
+    gap: 12px;
+    padding: 22px;
+  }
+
+  .choice__blurb {
+    font-size: var(--step-0);
+  }
+}
+
+@media (max-width: 560px) {
+  .landing__nav {
+    gap: 14px;
+  }
+
+  .landing__nav-link {
+    font-size: var(--step-xs);
+  }
+
+  .landing__headline {
+    font-size: var(--step-4);
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .landing__support {
+    font-size: var(--step-0);
+  }
+}

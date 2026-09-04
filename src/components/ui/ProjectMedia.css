@@ -1,0 +1,119 @@
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: inherit;
+  width: 100%;
+}
+
+.media__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
+}
+
+.media.is-loaded .media__img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Shimmer only while a real file is in flight */
+.media:not(.is-loaded):not(.is-fallback)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    var(--surface) 30%,
+    rgba(255, 255, 255, 0.65) 50%,
+    var(--surface) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Designed fallback — a generated cover, not a broken image
+   -------------------------------------------------------------------------- */
+.media__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2.4vw, 28px);
+  background: var(--green-900);
+  color: #fff;
+  overflow: hidden;
+}
+
+.media__fallback::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-repeat: repeat;
+}
+
+/* v0 — engineering grid */
+.media--v0 .media__fallback::before {
+  background-image: linear-gradient(
+      to right,
+      rgba(245, 232, 98, 0.16) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(245, 232, 98, 0.16) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* v1 — diagonal rule */
+.media--v1 .media__fallback::before {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(245, 232, 98, 0.14) 0 1px,
+    transparent 1px 12px
+  );
+}
+
+/* v2 — dot field */
+.media--v2 .media__fallback::before {
+  background-image: radial-gradient(
+    rgba(245, 232, 98, 0.28) 1.2px,
+    transparent 1.2px
+  );
+  background-size: 20px 20px;
+}
+
+/* v3 — soft field, no pattern */
+.media--v3 .media__fallback::before {
+  background-image: radial-gradient(
+    120% 90% at 15% 10%,
+    rgba(245, 232, 98, 0.24),
+    transparent 60%
+  );
+  opacity: 1;
+}
+
+.media__initials {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--bezliab-yellow);
+}
+
+.media__caption {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--step-tiny);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 22ch;
+}

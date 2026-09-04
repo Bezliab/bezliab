@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Hero — one structure, two personalities
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding-top: clamp(40px, 6vh, 72px);
+  padding-bottom: clamp(64px, 10vh, 128px);
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  min-height: min(78vh, 780px);
+}
+
+.hero__copy {
+  max-width: 40rem;
+}
+
+/* ---------- top row ---------- */
+.hero__top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px 6px 11px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: var(--meta-tracking, 0.02em);
+  color: var(--muted);
+}
+
+.hero__status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-500) 22%, transparent);
+  animation: pulse-soft 2.6s var(--ease-in-out) infinite;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ---------- headline ---------- */
+.hero__title {
+  font-size: var(--step-5);
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+  max-width: 20ch;
+}
+
+.hero__support {
+  margin-bottom: clamp(26px, 3.6vw, 40px);
+  max-width: 46ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: clamp(34px, 5vw, 56px);
+}
+
+/* ---------- the quiet tool row ---------- */
+.hero__stack {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-color);
+}
+
+.hero__stack-label {
+  font-family: var(--meta-font, var(--font-mono));
+  font-size: var(--step-tiny);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero__stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.hero__stack-list li {
+  font-size: var(--step-sm);
+  font-weight: 600;
+  color: var(--text);
+  transition: color var(--dur) var(--ease);
+}
+
+.hero__stack-list li:hover {
+  color: var(--accent);
+}
+
+/* ---------- visual ---------- */
+.hero__visual {
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Designer mode — more editorial: a wider measure so the statement breaks
+   into three long lines instead of a narrow stack, the collage given less
+   width, and the two columns hung from a shared baseline
+   -------------------------------------------------------------------------- */
+[data-mode='designer'] .hero__grid {
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: end;
+  /* No min-height on this side. Bottom-aligned columns plus a floor height
+     put every spare pixel above the eyebrow as one dead band under the
+     navbar; letting the content set the height keeps the hang without it. */
+  min-height: 0;
+}
+
+[data-mode='designer'] .hero__copy {
+  max-width: 46rem;
+}
+
+/* Deliberately NOT --step-6 here. At display sizes the line count is set by
+   the column width, not the font size: one step larger in a 700px column
+   turns a three-line statement into a five-line wall that pushes the CTAs
+   and the collage off the first screen. The editorial feel comes from the
+   measure, the baseline alignment and the collage instead. */
+[data-mode='designer'] .hero__title {
+  max-width: 22ch;
+}
+
+[data-mode='designer'] .hero__status {
+  text-transform: uppercase;
+}
+
+[data-mode='designer'] .hero__stack-list li {
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .hero__grid,
+  [data-mode='designer'] .hero__grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    min-height: 0;
+    gap: clamp(40px, 7vw, 64px);
+  }
+
+  .hero__copy,
+  [data-mode='designer'] .hero__copy {
+    max-width: 34rem;
+  }
+
+  .hero__title,
+  [data-mode='designer'] .hero__title {
+    max-width: 24ch;
+  }
+
+  .hero__visual {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero__title {
+    font-size: var(--step-4);
+  }
+
+  [data-mode='designer'] .hero__title {
+    font-size: var(--step-5);
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 100%;
+  }
+}

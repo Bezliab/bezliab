@@ -1,0 +1,205 @@
+/* ==========================================================================
+   BrowserMock — developer hero visual
+   A quiet product surface. Everything here is one step recessive so the
+   hero copy stays the loudest thing on the screen.
+   ========================================================================== */
+
+.browser-mock {
+  position: relative;
+  width: 100%;
+}
+
+.browser-mock__window {
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.browser-mock__window.is-floating {
+  animation: float-soft 9s var(--ease-in-out) infinite;
+}
+
+/* ---------- chrome ---------- */
+.browser-mock__chrome {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--surface);
+}
+
+.browser-mock__dots {
+  display: inline-flex;
+  gap: 6px;
+  flex: none;
+}
+
+.browser-mock__dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-color);
+}
+
+.browser-mock__url {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- surface ---------- */
+.browser-mock__surface {
+  padding: clamp(16px, 2vw, 22px);
+}
+
+.browser-mock__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.browser-mock__title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.browser-mock__range,
+.browser-mock__chart-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ---------- KPI row ---------- */
+.browser-mock__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.mock-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 12px 11px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.mock-stat__label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mock-stat__value {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+/* Direction is carried by the arrow as well as the hue, never hue alone. */
+.mock-stat__delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--green-600);
+}
+
+/* ---------- chart ---------- */
+.browser-mock__chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.browser-mock__chart-title {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.mock-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.mock-chart__grid {
+  stroke: var(--border-color);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.mock-chart__tick {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: var(--muted);
+}
+
+.mock-chart__area {
+  fill: var(--accent);
+  fill-opacity: 0.1;
+}
+
+.mock-chart__line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The single point of yellow in the whole mock: the current period. */
+.mock-chart__dot {
+  fill: var(--highlight);
+  stroke: var(--surface-2);
+  stroke-width: 2;
+}
+
+.mock-chart__value {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  fill: var(--text);
+}
+
+@media (max-width: 520px) {
+  .browser-mock__stats {
+    gap: 6px;
+  }
+
+  .mock-stat {
+    padding: 10px 9px;
+  }
+}
