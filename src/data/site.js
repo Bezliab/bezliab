@@ -14,21 +14,21 @@ export const site = {
   landing: {
     headline: ["I build.", "I design.", "I create."],
     support:
-      "A multidisciplinary creative combining software engineering and visual design to turn ideas into useful digital experiences.",
+      "A multidisciplinary creative that combines software engineering and visual design to turn ideas into useful digital experiences.",
   },
 
   // TODO(you): real contact details.
   contact: {
-    email: "hello@bezliab.com",
-    location: "Lagos, Nigeria",
+    email: "boluwarin215@gmail.com",
+    location: "Oyo, Nigeria",
     availability: "Open to roles and freelance projects",
-    responseTime: "Usually replies within 24 hours",
+    responseTime: "Always replies within 24 hours",
   },
 
   /* Socials — remove any you don't actually use; the footer and contact
      section render whatever is in this array, in this order. */
   socials: [
-    { label: "Email", href: "mailto:hello@bezliab.com", icon: "mail" },
+    { label: "Email", href: "mailto:boluwarin215@gmail.com", icon: "mail" },
     { label: "GitHub", href: "https://github.com/bezliab", icon: "github" },
     {
       label: "LinkedIn",
@@ -41,7 +41,11 @@ export const site = {
       href: "https://instagram.com/bezliab",
       icon: "instagram",
     },
-    { label: "WhatsApp", href: "https://wa.me/0000000000", icon: "whatsapp" },
+    {
+      label: "WhatsApp",
+      href: "https://wa.me/2348025938244",
+      icon: "whatsapp",
+    },
   ],
 };
 
