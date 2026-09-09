@@ -22,7 +22,7 @@ export const site = {
     email: "boluwarin215@gmail.com",
     location: "Oyo, Nigeria",
     availability: "Open to roles and freelance projects",
-    responseTime: "Always replies within 24 hours",
+    responseTime: "Always replies in less than 24 hours",
   },
 
   /* Socials — remove any you don't actually use; the footer and contact
@@ -35,10 +35,10 @@ export const site = {
       href: "https://linkedin.com/in/isaac-adeniji",
       icon: "linkedin",
     },
-    { label: "Behance", href: "https://behance.net/bezliab", icon: "behance" },
+    // { label: "Behance", href: "https://behance.net/bezliab", icon: "behance" },
     {
       label: "Instagram",
-      href: "https://instagram.com/bezliab",
+      href: "https://www.instagram.com/bezliab_graphics?stkn=MWk2OGEzNXFkY29yZA==",
       icon: "instagram",
     },
     {
