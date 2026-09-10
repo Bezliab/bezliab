@@ -63,7 +63,7 @@ export const developerProjects = [
     //   "/projects/campusconnect/messaging.webp",
     //   "/projects/campusconnect/search.webp",
     // ],
-    liveUrl: null, // TODO(you)
+    liveUrl: "https://campusconnect-stacksmith-techwiz6.netlify.app/",
     githubUrl: null, // TODO(you)
   },
 
@@ -76,7 +76,7 @@ export const developerProjects = [
     year: "2025",
     featured: true,
     order: 2,
-    image: "/projects/carenest/cover.webp",
+    image: "./img/CARENEST.png",
     description:
       "A maternal health application that helps expectant mothers track appointments, symptoms and milestones.",
     technologies: ["Flutter", "Dart", "Node.js", "MongoDB"],
@@ -116,7 +116,7 @@ export const developerProjects = [
     technologies: ["React", "Vite", "CSS", "Framer Motion"],
     role: "Design & Development",
     challenge:
-      "I needed to present two professions without looking like two unrelated people, and without maintaining two codebases.",
+      "I wanted to present two professions without looking like two unrelated people, and without maintaining two codebases.",
     solution:
       "One component system driven by a mode token. Developer and designer routes share the neutrals, type scale, navigation and footer; only the accent, display scale and layout rhythm change. Every project is a data object, so publishing new work never touches a component.",
     features: [
