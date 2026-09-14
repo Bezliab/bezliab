@@ -79,7 +79,7 @@ export const developerProjects = [
     image: "./img/CARENEST.png",
     description:
       "A maternal health application that helps expectant mothers track appointments, symptoms and milestones.",
-    technologies: ["Flutter", "Dart", "Node.js", "MongoDB"],
+    technologies: ["React Native", "Firebase", "Node.js", "MongoDB"],
     role: "Mobile & Backend Developer",
     challenge:
       "Maternal health guidance is time-sensitive and easy to lose track of. Paper cards get lost, and generic reminder apps know nothing about where someone is in a pregnancy.",
@@ -97,7 +97,7 @@ export const developerProjects = [
       "/projects/carenest/timeline.webp",
       "/projects/carenest/log.webp",
     ],
-    liveUrl: null, // TODO(you)
+    liveUrl: "https://carenest-home.base44.app", // TODO(you)
     githubUrl: null, // TODO(you)
   },
 
@@ -163,15 +163,15 @@ export const developerProjects = [
   },
 
   {
-    id: "inventory-dashboard",
+    id: "Ingen",
     type: "development",
-    title: "Inventory Dashboard",
+    title: "Invoice Generator",
     category: "Web Application",
     categories: ["web", "ui-ux"],
     year: "2025",
     featured: false,
     order: 5,
-    image: "/projects/inventory-dashboard/cover.webp",
+    image: "./img/",
     description:
       "A stock and reorder dashboard for a small retail operation, built to be readable at a glance on a shop counter.",
     technologies: ["React", "TypeScript", "PostgreSQL"],
