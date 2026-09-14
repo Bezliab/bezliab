@@ -171,11 +171,11 @@ export const developerProjects = [
     year: "2025",
     featured: false,
     order: 5,
-    image: "./img/",
+    image: "./img/ingen.png",
     description:
       "A stock and reorder dashboard for a small retail operation, built to be readable at a glance on a shop counter.",
     technologies: ["React", "TypeScript", "PostgreSQL"],
-    role: "Full Stack Developer",
+    role: "App Developer",
     challenge:
       "Stock was tracked in a spreadsheet that only one person understood, and reorder decisions were made from memory.",
     solution:
@@ -186,7 +186,7 @@ export const developerProjects = [
       "Supplier records",
       "CSV export",
     ],
-    liveUrl: null,
+    liveUrl: "https://ingen-wheat.vercel.app/",
     githubUrl: null,
   },
 
