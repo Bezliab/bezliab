@@ -65,7 +65,7 @@ export const modes = {
     cardBlurb: "I build digital products, web applications and systems.",
 
     hero: {
-      eyebrow: "Software Dev",
+      eyebrow: "Software Developer",
       headline: "I build digital products that solve real problems.",
       support:
         "Full-stack developer focused on building reliable web and mobile applications, scalable backend systems and thoughtful user experiences.",
@@ -89,13 +89,14 @@ export const modes = {
       body: [
         // TODO(you): rewrite in your own voice.
         "I started out designing before I started building, which means I think about software the way a designer thinks about a poster: what is this actually for, who is reading it, and what can be removed.",
+        "When I started building, I would usually break it down into bits to understand what I intend to do before the building starts. Which means I think about software the way a developer thinks about a system: what is the data model, how does it scale, and what happens when it breaks.",
         "Today I build full-stack applications end to end — data model, API, interface — and I care about the parts users never see: sensible states, honest error messages, pages that load quickly on a bad connection.",
       ],
       /* TODO(you): only numbers you can genuinely support. Delete any you can't. */
       stats: [
         { value: "2+", label: "Years building" },
         { value: "10+", label: "Projects shipped" },
-        { value: "12", label: "Technologies" },
+        { value: "10", label: "Technologies" },
       ],
     },
 
