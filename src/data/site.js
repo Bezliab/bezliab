@@ -93,7 +93,7 @@ export const modes = {
       ],
       /* TODO(you): only numbers you can genuinely support. Delete any you can't. */
       stats: [
-        { value: "3+", label: "Years building" },
+        { value: "2+", label: "Years building" },
         { value: "10+", label: "Projects shipped" },
         { value: "12", label: "Technologies" },
       ],
