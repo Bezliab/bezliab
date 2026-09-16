@@ -1,13 +1,13 @@
-import { useRef } from 'react'
+import { useRef } from "react";
 import {
   motion,
   useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
-} from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
-import './BrowserMock.css'
+} from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import "./BrowserMock.css";
 
 /**
  * The developer hero visual — a floating browser window showing a small
@@ -26,42 +26,44 @@ import './BrowserMock.css'
  */
 
 /* ---------- the plotted series (invented; this is a mock) ---------- */
-const SERIES = [28, 31, 30, 36, 34, 41, 39, 46, 49, 47, 53, 57]
-const DOMAIN_MAX = 60
-const TICKS = [60, 40, 20]
+const SERIES = [22, 45, 39, 54, 45, 60, 68, 65, 76, 88];
+const DOMAIN_MAX = 90;
+const TICKS = [100, 80, 60, 40, 20];
 
 /* plot geometry, in viewBox units */
-const VIEW = { w: 340, h: 100 }
-const PLOT = { left: 26, right: 300, top: 18, bottom: 88 }
+const VIEW = { w: 340, h: 100 };
+const PLOT = { left: 26, right: 300, top: 18, bottom: 88 };
 
-const stepX = (PLOT.right - PLOT.left) / (SERIES.length - 1)
-const toX = (i) => PLOT.left + i * stepX
-const toY = (v) => PLOT.bottom - (v / DOMAIN_MAX) * (PLOT.bottom - PLOT.top)
+const stepX = (PLOT.right - PLOT.left) / (SERIES.length - 1);
+const toX = (i) => PLOT.left + i * stepX;
+const toY = (v) => PLOT.bottom - (v / DOMAIN_MAX) * (PLOT.bottom - PLOT.top);
 
-const points = SERIES.map((v, i) => [toX(i), toY(v)])
-const linePath = points.map(([x, y], i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ')
-const areaPath = `${linePath} L${PLOT.right} ${PLOT.bottom} L${PLOT.left} ${PLOT.bottom} Z`
-const last = points[points.length - 1]
+const points = SERIES.map((v, i) => [toX(i), toY(v)]);
+const linePath = points
+  .map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`)
+  .join(" ");
+const areaPath = `${linePath} L${PLOT.right} ${PLOT.bottom} L${PLOT.left} ${PLOT.bottom} Z`;
+const last = points[points.length - 1];
 
 const STATS = [
-  { label: 'Revenue', value: '$48.2K', delta: '12.4%' },
-  { label: 'Users', value: '12.9K', delta: '8.1%' },
-  { label: 'Orders', value: '1,284', delta: '3.6%' },
-]
+  { label: "Revenue", value: "₦88.2K", delta: "25%" },
+  { label: "Users", value: "12+", delta: "8.1%" },
+  { label: "Orders", value: "40+", delta: "3.5%" },
+];
 
 export function BrowserMock() {
-  const reduceMotion = useReducedMotion()
-  const ref = useRef(null)
+  const reduceMotion = useReducedMotion();
+  const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'end start'],
-  })
+    offset: ["start end", "end start"],
+  });
   const drift = useSpring(useTransform(scrollYProgress, [0, 1], [34, -46]), {
     stiffness: 60,
     damping: 20,
     restDelta: 0.4,
-  })
+  });
 
   return (
     <div className="browser-mock" ref={ref} aria-hidden="true">
@@ -69,7 +71,9 @@ export function BrowserMock() {
         className="browser-mock__drift"
         style={reduceMotion ? undefined : { y: drift }}
       >
-        <div className={`browser-mock__window${reduceMotion ? '' : ' is-floating'}`}>
+        <div
+          className={`browser-mock__window${reduceMotion ? "" : " is-floating"}`}
+        >
           {/* ---------- chrome ---------- */}
           <div className="browser-mock__chrome">
             <span className="browser-mock__dots">
@@ -93,7 +97,7 @@ export function BrowserMock() {
                   <span className="mock-stat__label">{stat.label}</span>
                   <span className="mock-stat__value">{stat.value}</span>
                   <span className="mock-stat__delta">
-                    <ArrowUpRight size={11} strokeWidth={2.5} />
+                    <ArrowUpRight size={12} strokeWidth={2.4} />
                     {stat.delta}
                   </span>
                 </div>
@@ -103,7 +107,7 @@ export function BrowserMock() {
             <div className="browser-mock__chart">
               <div className="browser-mock__chart-head">
                 <span className="browser-mock__chart-title">Revenue</span>
-                <span className="browser-mock__chart-note">$000</span>
+                <span className="browser-mock__chart-note">₦90,000</span>
               </div>
 
               <svg
@@ -151,7 +155,7 @@ export function BrowserMock() {
                   y={last[1] - 11}
                   textAnchor="middle"
                 >
-                  57.4
+                  88,000
                 </text>
               </svg>
             </div>
@@ -159,7 +163,7 @@ export function BrowserMock() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
-export default BrowserMock
+export default BrowserMock;
