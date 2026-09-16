@@ -65,7 +65,7 @@ export const modes = {
     cardBlurb: "I build digital products, web applications and systems.",
 
     hero: {
-      eyebrow: "Software Development",
+      eyebrow: "Software Dev",
       headline: "I build digital products that solve real problems.",
       support:
         "Full-stack developer focused on building reliable web and mobile applications, scalable backend systems and thoughtful user experiences.",
@@ -94,7 +94,7 @@ export const modes = {
       /* TODO(you): only numbers you can genuinely support. Delete any you can't. */
       stats: [
         { value: "3+", label: "Years building" },
-        { value: "20+", label: "Projects shipped" },
+        { value: "10+", label: "Projects shipped" },
         { value: "12", label: "Technologies" },
       ],
     },

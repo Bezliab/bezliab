@@ -2,7 +2,7 @@
    DEVELOPER PROJECTS
 
    Adding a project:
-     1. Drop images in  public/projects/<id>/
+     1. Drop images in  public/img/<id>/
      2. Add one object below
      3. Save. Done — no component, grid, modal or CSS to touch.
 
@@ -110,7 +110,7 @@ export const developerProjects = [
     year: "2026",
     featured: true,
     order: 3,
-    image: "/projects/bezliab-portfolio/cover.webp",
+    image: "/img/portfolio.png",
     description:
       "A dual-profession personal site: two portfolio experiences, one brand, one shared component system.",
     technologies: ["React", "Vite", "CSS", "Framer Motion"],
