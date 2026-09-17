@@ -14,4 +14,20 @@
    }
    ========================================================================== */
 
-export const certificates = []
+export const certificates = [
+  {
+    id: "cert-aws-cp",
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    year: "2025",
+    url: "https://…", // credential link, or null
+  },
+
+  {
+    id: "cert-aws-cp",
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    year: "2025",
+    url: "https://…", // credential link, or null
+  },
+];
