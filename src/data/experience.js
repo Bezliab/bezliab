@@ -28,7 +28,7 @@ export const experience = [
 
   {
     id: "exp-2",
-    period: "2023 — Present",
+    period: "2021 — Present",
     role: "Freelance Graphic Designer",
     company: "Independent",
     type: "Freelance",
@@ -88,8 +88,7 @@ export const experience = [
     id: "exp-5",
     period: "2021 & 2023",
     role: "Student Teacher (Mathematics)",
-    company:
-      "Oba Abass Aleshinloye Grammar School & Anwar Ul Islam Grammar School",
+    company: "Oba Abass Aleshinloye & Anwar Ul Islam Grammar School",
     type: "Teaching Practice",
     location: "Ibadan, Nigeria",
     body: "Delivered Mathematics lessons during teaching practice, using learner-centred strategies to improve student understanding, performance, and interest in the subject.",
@@ -112,8 +111,8 @@ export const experience = [
     period: "2022",
     role: "Mathematics & Computer Science Teacher",
     company: "Marianne Comprehensive School",
-    type: "Full-time",
-    location: "Nigeria",
+    type: "Part-time",
+    location: "Ibadan, Nigeria",
     body: "Taught Mathematics and Computer Science while preparing structured lessons and evaluating student performance to support academic development.",
     highlights: [
       "Taught Mathematics and Computer Science",
@@ -130,7 +129,7 @@ export const experience = [
     role: "Mathematics Teacher",
     company: "Best Grades Tutorial Academy",
     type: "Teaching",
-    location: "Nigeria",
+    location: "Ibadan, Nigeria",
     body: "Prepared students for POST-UTME and JAMB examinations through focused Mathematics instruction, assessments, revision sessions, and exam-oriented preparation.",
     highlights: [
       "Prepared students for POST-UTME and JAMB examinations",
