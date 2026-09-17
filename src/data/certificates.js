@@ -16,10 +16,10 @@
 
 export const certificates = [
   {
-    id: "cert-aws-cp",
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    year: "2025",
+    id: "ADSE",
+    title: "Advanced Diploma in Software Engineering",
+    issuer: "Aptech Computer Education",
+    year: "2026",
     url: "https://…", // credential link, or null
   },
 
