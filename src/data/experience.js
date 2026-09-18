@@ -7,18 +7,19 @@ export const experience = [
   {
     id: "exp-1",
     period: "2025 — 2026",
-    role: "NYSC Teacher (Basic Technology)",
+    role: "NYSC Teacher",
     company: "Oba Abass Aleshinloye Grammar School",
     type: "NYSC",
     location: "Ibadan, Nigeria",
-    body: "Taught Basic Technology to junior secondary students, developed instructional materials, assessed student performance, and maintained an effective classroom learning environment.",
+    body: "Taught Junior Secondary Students, developed instructional materials, assessed student performance, and maintained an effective classroom learning environment.",
     highlights: [
-      "Taught Basic Technology to junior secondary students",
+      "Taught Junior Secondary Students",
       "Prepared lesson plans and instructional materials",
       "Assessed students through assignments and tests",
       "Simplified technical concepts to improve student understanding",
     ],
     stack: [
+      "Mathematics",
       "Basic Technology",
       "Lesson Planning",
       "Assessment",
