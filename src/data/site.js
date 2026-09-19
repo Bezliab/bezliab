@@ -96,14 +96,14 @@ export const modes = {
       stats: [
         { value: "2+", label: "Years building" },
         { value: "10+", label: "Projects shipped" },
-        { value: "10", label: "Technologies" },
+        { value: "10+", label: "Technologies" },
       ],
     },
 
     work: {
       eyebrow: "Portfolio",
-      title: "Selected Work",
-      support: "A selection of things I've designed, built and shipped.",
+      title: "Past Works",
+      support: "An overview of things I've designed, built and shipped.",
       viewMoreLabel: "View More Projects",
       modalTitle: "All Projects",
       hoverLabel: "Case study",
@@ -122,7 +122,7 @@ export const modes = {
     seo: {
       title: "Isaac Adeniji — Full Stack Software Developer",
       description:
-        "Full-stack software developer building web, mobile and backend applications.",
+        "Full-stack software developer building web, mobile and fullstack applications.",
     },
   },
 
