@@ -163,7 +163,7 @@ export const modes = {
       stats: [
         { value: "4+", label: "Years designing" },
         { value: "30+", label: "Brand & visual projects" },
-        { value: "8", label: "Industries" },
+        { value: "8+", label: "Industries" },
       ],
     },
 
