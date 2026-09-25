@@ -53,7 +53,7 @@ export const designProjects = [
       "Typography",
       "Social Media Design",
     ],
-    tools: ["Adobe Illustrator", "Photoshop", "Figma"],
+    tools: ["Adobe Illustrator", "Photoshop", "CorelDraw"],
     deliverables: [
       "Primary and secondary marks",
       "Colour system with usage ratios",
@@ -65,7 +65,7 @@ export const designProjects = [
       "/img/Bezliab-w&c.png",
       "/img/Biz-f.png",
       "/img/Biz-b.png",
-      "/projects/design/bezliab-branding/4.webp",
+      // "/projects/design/bezliab-branding/4.webp",
     ],
     challenge:
       "The brand needed a visual identity that could hold two very different kinds of work — engineering and visual design — without splitting into two personalities.",
