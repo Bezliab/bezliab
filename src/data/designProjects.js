@@ -141,24 +141,21 @@ export const designProjects = [
     title: "Logo Collection",
     category: "Logo Design",
     categories: ["logo", "brand-identity"],
-    year: "2024",
+    year: "2026",
     featured: false,
     order: 4,
     size: "standard",
-    image: "/projects/design/logo-collection/cover.webp",
+    image: "./img/tmoni_logo.png",
     description:
-      "Selected marks from client and concept work, shown with the construction behind them.",
-    client: "Various",
+      "Logo from client and concept work, shown with the variations available.",
+    client: "Tmoni",
     services: ["Logo Design", "Mark Construction"],
     tools: ["Adobe Illustrator"],
-    gallery: [
-      "/projects/design/logo-collection/1.webp",
-      "/projects/design/logo-collection/2.webp",
-    ],
+    gallery: ["./img/tmoni_app_Logo.png", "./img/tmoni_favicon.png"],
     challenge:
-      "Marks have to survive being small, single-colour and embroidered.",
+      "A new brand needed a logo to make their mark instantly recognisable at small sizes, and a concept mark needed to be tested for legibility.",
     solution:
-      "Every mark here was drawn on a grid and tested at 16px before any colour was applied.",
+      "Every mark here was drawn on a grid and scaled before any colour was applied.",
   },
 
   {
