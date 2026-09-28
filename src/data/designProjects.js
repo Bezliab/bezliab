@@ -102,25 +102,25 @@ export const designProjects = [
   },
 
   {
-    id: "social-campaign",
+    id: "birthday design",
     type: "design",
-    title: "Launch Campaign",
-    category: "Social Media Design",
-    categories: ["social-media", "brand-identity"],
-    year: "2025",
+    title: "Birthday Graphic",
+    category: "Birthday Design",
+    categories: ["celebration"],
+    year: "2026",
     featured: true,
-    order: 3,
+    order: 1,
     size: "standard",
     image: "/projects/design/social-campaign/cover.webp",
     description:
       "A three-week launch campaign: templates, motion-ready assets and a posting system the client could run without a designer.",
-    client: "Client work", // TODO(you): name the client if you have permission
+    client: "Freelancing for my Fort Unit", // TODO(you): name the client if you have permission
     services: ["Campaign Design", "Social Media Design", "Art Direction"],
-    tools: ["Figma", "Photoshop", "After Effects"],
+    tools: ["CorelDraw", "Corel PHOTO-PAINT"],
     deliverables: [
-      "Feed and story templates",
-      "Motion cutdowns",
-      "Caption and posting guide",
+      "Celebrate the celebrant",
+      "Use brand colour",
+      "Use brand font",
     ],
     gallery: [
       "/projects/design/social-campaign/1.webp",
@@ -128,9 +128,9 @@ export const designProjects = [
       "/projects/design/social-campaign/3.webp",
     ],
     challenge:
-      "The client had no designer after launch week, so anything I made had to survive being edited by someone else.",
+      "Members were not happy that other forts were celebratinig their members and we were not.",
     solution:
-      "I built the campaign as a small set of locked templates with named text layers and a one-page rule sheet. Three weeks of posts came out of five components.",
+      "I built the design as a small set of freestyle templates with multiple layers and multiple images. One design that does not look like the contemporary birthday graphic.",
   },
 
   /* ---- Non-featured: only inside the View More browser ---- */
