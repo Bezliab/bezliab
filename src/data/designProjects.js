@@ -102,16 +102,16 @@ export const designProjects = [
   },
 
   {
-    id: "birthday design",
+    id: "fort design",
     type: "design",
-    title: "Birthday Graphic",
-    category: "Birthday Design",
-    categories: ["celebration"],
+    title: "Fort Graphics",
+    category: "Volunteer work",
+    categories: ["celebration", "reminder", "social-media"],
     year: "2026",
     featured: true,
     order: 1,
     size: "standard",
-    image: "/projects/design/social-campaign/cover.webp",
+    image: "./img/Fort_Bday.png",
     description:
       "A three-week launch campaign: templates, motion-ready assets and a posting system the client could run without a designer.",
     client: "Freelancing for my Fort Unit", // TODO(you): name the client if you have permission
@@ -123,14 +123,16 @@ export const designProjects = [
       "Use brand font",
     ],
     gallery: [
-      "/projects/design/social-campaign/1.webp",
-      "/projects/design/social-campaign/2.webp",
-      "/projects/design/social-campaign/3.webp",
+      "./img/Fort_Bday.png",
+      "./img/Fort_Capstone.png",
+      "./img/Fort_Letterhead.png",
+      "./img/Fort_Quest_1.png",
+      "./img/Fort_Quest_2.png",
     ],
     challenge:
-      "Members were not happy that other forts were celebratinig their members and we were not.",
+      "We had meeting on some days and members weren't aware also members were not happy that other forts were celebrating their members and we were not.",
     solution:
-      "I built the design as a small set of freestyle templates with multiple layers and multiple images. One design that does not look like the contemporary birthday graphic.",
+      "I built the design as a small set of freestyle templates with multiple layers and multiple images. One design that does not look like the contemporary graphic others have been making.",
   },
 
   /* ---- Non-featured: only inside the View More browser ---- */
