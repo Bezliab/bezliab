@@ -118,7 +118,7 @@ export const designProjects = [
     services: ["Campaign Design", "Social Media Design", "Art Direction"],
     tools: ["CorelDraw", "Corel PHOTO-PAINT"],
     deliverables: [
-      "Celebrate the celebrant",
+      "Simple yet easy to understand design",
       "Use brand colour",
       "Use brand font",
     ],
