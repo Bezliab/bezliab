@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import { imageSizes } from '../../data/imageSizes'
 import './ProjectMedia.css'
-import './Justified.css'
 
 /* Deterministic variant per project so a card always gets the same
    placeholder treatment between reloads. */
@@ -41,22 +39,12 @@ function initials(title = '') {
 export function ProjectMedia({
   src,
   alt,
-  ratio,
+  ratio = '16 / 10',
   priority = false,
   className = '',
   sizes,
-  style,
 }) {
   const [state, setState] = useState(src ? 'loading' : 'failed')
-  const [measured, setMeasured] = useState(null)
-
-  /* The frame takes the picture's own shape, so nothing is cropped and there
-     are no bars. The shape comes from the generated size table (known before
-     the image loads, so nothing jumps); an image that isn't in the table is
-     measured once it loads. `ratio` only exists to force a shape. */
-  const known = imageSizes[src]
-  const number = known ? known[0] / known[1] : measured
-  const aspect = ratio ?? (number ? `${number}` : '16 / 10')
 
   const variant = hash(alt ?? src ?? '') % 4
   const showFallback = state === 'failed'
@@ -66,7 +54,7 @@ export function ProjectMedia({
       className={`media media--v${variant} ${
         showFallback ? 'is-fallback' : ''
       } ${state === 'loaded' ? 'is-loaded' : ''} ${className}`}
-      style={{ aspectRatio: aspect, ...(number ? { '--ar': number } : null), ...style }}
+      style={{ aspectRatio: ratio }}
     >
       {!showFallback && (
         <img
@@ -78,13 +66,7 @@ export function ProjectMedia({
           fetchpriority={priority ? 'high' : 'auto'}
           decoding="async"
           draggable="false"
-          onLoad={(event) => {
-            const { naturalWidth, naturalHeight } = event.currentTarget
-            if (naturalWidth && naturalHeight) {
-              setMeasured(naturalWidth / naturalHeight)
-            }
-            setState('loaded')
-          }}
+          onLoad={() => setState('loaded')}
           onError={() => setState('failed')}
         />
       )}
