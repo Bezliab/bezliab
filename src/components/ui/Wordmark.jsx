@@ -46,8 +46,8 @@
 import { Link } from "react-router-dom";
 import { site } from "../../data/site";
 import { usePortfolio } from "../../context/PortfolioContext";
-import logoColour from "../../assets/logos/bezliab-logo-colour.png";
-import logoWc from "../../assets/logos/bezliab-logo-wc.png";
+import logoColour from "../../assets/logos/bezliab-logo-colour.webp";
+import logoWc from "../../assets/logos/bezliab-logo-wc.webp";
 import "./Wordmark.css";
 
 /**

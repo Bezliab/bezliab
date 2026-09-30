@@ -43,7 +43,7 @@ export const designProjects = [
     featured: true,
     order: 1,
     size: "large",
-    image: "/img/Bezliab-c.png",
+    image: "/img/Bezliab-c.webp",
     description:
       "A complete visual identity created for a modern digital brand — mark, type system, colour rules and the social kit that carries it.",
     client: "Personal project",
@@ -62,9 +62,9 @@ export const designProjects = [
       "Brand guidelines PDF",
     ],
     gallery: [
-      "/img/Bezliab-w-c.png",
-      "/img/Biz-f.png",
-      "/img/Biz-b.png",
+      "/img/Bezliab-w-c.webp",
+      "/img/Biz-f.webp",
+      "/img/Biz-b.webp",
       // "/projects/design/bezliab-branding/4.webp",
     ],
     challenge:
@@ -83,7 +83,7 @@ export const designProjects = [
     featured: true,
     order: 2,
     size: "wide",
-    image: "/img/wwuf.png",
+    image: "/img/wwuf.webp",
     description:
       "A set of typographic posters exploring scale, negative space and how far a grid can be pushed before it stops holding.",
     client: "Self-initiated",
@@ -91,9 +91,9 @@ export const designProjects = [
     tools: ["Adobe Illustrator", "InDesign"],
     deliverables: ["Six A2 posters", "Print-ready artwork"],
     gallery: [
-      "/img/wwuf.png",
-      "/img/MatchDayDesign.png",
-      "/img/Rehoboth-X-mas.png",
+      "/img/wwuf.webp",
+      "/img/MatchDayDesign.webp",
+      "/img/Rehoboth-X-mas.webp",
     ],
     challenge:
       "A weekly self-brief: one idea per poster, type only, no illustration to hide behind.",
@@ -111,7 +111,7 @@ export const designProjects = [
     featured: true,
     order: 1,
     size: "standard",
-    image: "/img/Fort_Bday.png",
+    image: "/img/Fort_Bday.webp",
     description:
       "A three-week launch campaign: templates, motion-ready assets and a posting system the client could run without a designer.",
     client: "Freelancing for my Fort Unit", // TODO(you): name the client if you have permission
@@ -123,11 +123,11 @@ export const designProjects = [
       "Use brand font",
     ],
     gallery: [
-      "/img/Fort_Bday.png",
-      "/img/Fort_Capstone.png",
-      "/img/Fort_Letterhead.png",
-      "/img/Fort_Quest_1.png",
-      "/img/Fort_Quest_2.png",
+      "/img/Fort_Bday.webp",
+      "/img/Fort_Capstone.webp",
+      "/img/Fort_Letterhead.webp",
+      "/img/Fort_Quest_1.webp",
+      "/img/Fort_Quest_2.webp",
     ],
     challenge:
       "We had meeting on some days and members weren't aware also members were not happy that other forts were celebrating their members and we were not.",
@@ -147,13 +147,13 @@ export const designProjects = [
     featured: false,
     order: 4,
     size: "standard",
-    image: "/img/tmoni_logo.png",
+    image: "/img/tmoni_logo.webp",
     description:
       "Logo from client and concept work, shown with the variations available.",
     client: "Tmoni",
     services: ["Logo Design", "Mark Construction"],
     tools: ["Adobe Illustrator"],
-    gallery: ["/img/tmoni_app_Logo.png", "/img/tmoni_favicon.png"],
+    gallery: ["/img/tmoni_app_Logo.webp", "/img/tmoni_favicon.webp"],
     challenge:
       "A new brand needed a logo to make their mark instantly recognisable at small sizes, and a concept mark needed to be tested for legibility.",
     solution:

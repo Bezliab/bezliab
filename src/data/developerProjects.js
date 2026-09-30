@@ -40,7 +40,7 @@ export const developerProjects = [
     year: "2026",
     featured: true,
     order: 1,
-    image: "/img/campusconnect.png",
+    image: "/img/campusconnect.webp",
     description:
       "A platform designed to connect students with campus services, resources and communities in one place.",
     technologies: ["React", "TypeScript", "ASP.NET Core", "PostgreSQL"],
@@ -76,7 +76,7 @@ export const developerProjects = [
     year: "2025",
     featured: true,
     order: 2,
-    image: "/img/CARENEST.png",
+    image: "/img/CARENEST.webp",
     description:
       "A maternal health application that helps expectant mothers track appointments, symptoms and milestones.",
     technologies: ["React Native", "Firebase", "Node.js", "MongoDB"],
@@ -110,7 +110,7 @@ export const developerProjects = [
     year: "2026",
     featured: true,
     order: 3,
-    image: "/img/portfolio.png",
+    image: "/img/portfolio.webp",
     description:
       "A dual-profession personal site: two portfolio experiences, one brand, one shared component system.",
     technologies: ["React", "Vite", "CSS", "Framer Motion"],
@@ -171,7 +171,7 @@ export const developerProjects = [
     year: "2025",
     featured: false,
     order: 5,
-    image: "/img/ingen.png",
+    image: "/img/ingen.webp",
     description:
       "A stock and reorder dashboard for a small retail operation, built to be readable at a glance on a shop counter.",
     technologies: ["React", "TypeScript", "PostgreSQL"],
