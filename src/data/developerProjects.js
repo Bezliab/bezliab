@@ -2,7 +2,7 @@
    DEVELOPER PROJECTS
 
    Adding a project:
-     1. Drop images in  public/img/<id>/
+     1. Drop images in  public/img/
      2. Add one object below
      3. Save. Done — no component, grid, modal or CSS to touch.
 
@@ -40,7 +40,7 @@ export const developerProjects = [
     year: "2026",
     featured: true,
     order: 1,
-    image: "./img/campusconnect.png",
+    image: "/img/campusconnect.png",
     description:
       "A platform designed to connect students with campus services, resources and communities in one place.",
     technologies: ["React", "TypeScript", "ASP.NET Core", "PostgreSQL"],
@@ -76,7 +76,7 @@ export const developerProjects = [
     year: "2025",
     featured: true,
     order: 2,
-    image: "./img/CARENEST.png",
+    image: "/img/CARENEST.png",
     description:
       "A maternal health application that helps expectant mothers track appointments, symptoms and milestones.",
     technologies: ["React Native", "Firebase", "Node.js", "MongoDB"],
@@ -171,7 +171,7 @@ export const developerProjects = [
     year: "2025",
     featured: false,
     order: 5,
-    image: "./img/ingen.png",
+    image: "/img/ingen.png",
     description:
       "A stock and reorder dashboard for a small retail operation, built to be readable at a glance on a shop counter.",
     technologies: ["React", "TypeScript", "PostgreSQL"],

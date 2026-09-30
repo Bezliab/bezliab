@@ -20,7 +20,7 @@ export const certificates = [
     title: "Advanced Diploma in Software Engineering",
     issuer: "Aptech Computer Education",
     year: "2026",
-    url: "./img/ADSE.png", // credential link, or null
+    url: "/img/ADSE.jpeg", // credential link, or null
   },
 
   {
