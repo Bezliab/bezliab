@@ -23,9 +23,6 @@ import './Collage.css'
  * projects are. Reorder them in designProjects.js and this reorders too.
  */
 
-/* ratio per slot, so the collage keeps its shape whatever the images are */
-const SLOTS = ['4 / 5', '1 / 1', '4 / 3']
-
 export function Collage() {
   const reduceMotion = useReducedMotion()
   const ref = useRef(null)
@@ -51,7 +48,6 @@ export function Collage() {
             <ProjectMedia
               src={first.image}
               alt={first.title}
-              ratio={SLOTS[0]}
               priority
               sizes="(max-width: 900px) 55vw, 30vw"
             />
@@ -63,7 +59,6 @@ export function Collage() {
             <ProjectMedia
               src={third.image}
               alt={third.title}
-              ratio={SLOTS[2]}
               sizes="(max-width: 900px) 55vw, 30vw"
             />
           </figure>
@@ -87,7 +82,6 @@ export function Collage() {
             <ProjectMedia
               src={second.image}
               alt={second.title}
-              ratio={SLOTS[1]}
               priority
               sizes="(max-width: 900px) 40vw, 22vw"
             />
