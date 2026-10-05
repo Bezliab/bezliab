@@ -213,4 +213,33 @@ export const developerProjects = [
     liveUrl: null,
     githubUrl: null,
   },
+
+  {
+    id: "tictactoe",
+    type: "live game",
+    title: "Tic Tac Toe",
+    category: "Web Application",
+    categories: ["web", "ui-ux", "frontend"],
+    year: "2026",
+    featured: false,
+    order: 5,
+    image: "./img/tictactoe.png",
+    description:
+      "A simple interesting game for two players. Multiplayer loading!",
+    technologies: ["React", "TypeScript", "PostgreSQL"],
+    role: "App Developer",
+    challenge:
+      "I was conversing with a friend and we wanted to play a game together. We wanted a simple game that could be played in a browser, without needing to install anything or create accounts.",
+    // but we were in different locations and didn't have a game to play.",
+    solution:
+      "A web-based Tic Tac Toe game that allows two players to play together in real-time. The game is simple, easy to use, and can be played from any device with a web browser.",
+    features: [
+      "Multiple levels of difficulty",
+      // "Real-time multiplayer mode",
+      "Responsive design for mobile and desktop",
+      "Score tracking and game history",
+    ],
+    liveUrl: "https://bezliab.github.io/tictactoe/",
+    githubUrl: null,
+  },
 ];
