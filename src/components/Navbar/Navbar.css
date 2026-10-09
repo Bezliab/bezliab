@@ -113,13 +113,17 @@
    Responsive — the mode switch is the last thing to go, and it never does
    -------------------------------------------------------------------------- */
 @media (max-width: 1023px) {
-  .nav__sections,
-  .nav__cta {
+  /* `.nav ` prefix is deliberate: .btn (global.css) sets display:inline-flex
+     at the same specificity and is bundled AFTER this file, so a bare
+     `.nav__cta { display: none }` loses and the CTA leaks onto phones. */
+  .nav .nav__sections,
+  .nav .nav__cta {
     display: none;
   }
 
-  .nav__burger {
+  .nav .nav__burger {
     display: inline-flex;
+    flex: none;
   }
 }
 
@@ -132,10 +136,40 @@
 
   .nav__center {
     justify-content: flex-end;
+    min-width: 0;
   }
 
   /* the wordmark drops its tagline and tightens; see Wordmark.css */
   .nav .wordmark__text {
     font-size: var(--step-sm);
+  }
+}
+
+/* Very small phones (≤ 380px): wordmark + switch + burger must still fit
+   on one row without anything being pushed off-screen. */
+@media (max-width: 380px) {
+  .nav__inner {
+    gap: 6px;
+  }
+
+  .nav .wordmark__logo {
+    height: 22px;
+  }
+
+  .nav__burger {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav__inner {
+    padding-inline: 16px;
+  }
+
+  .nav .mode-switch--bar {
+    padding: 2px;
+  }
+
+  .nav .mode-switch--bar .mode-switch__item {
+    padding: 6px 9px;
   }
 }

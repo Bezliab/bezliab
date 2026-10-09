@@ -43,7 +43,7 @@ export const designProjects = [
     featured: true,
     order: 1,
     size: "large",
-    image: "/img/Bezliab-c.webp",
+    image: "/img/Bezliab.png",
     description:
       "A complete visual identity created for a modern digital brand — mark, type system, colour rules and the social kit that carries it.",
     client: "Personal project",
@@ -83,7 +83,7 @@ export const designProjects = [
     featured: true,
     order: 2,
     size: "wide",
-    image: "/img/wwuf.webp",
+    image: "/img/Meridian.webp",
     description:
       "A set of typographic posters exploring scale, negative space and how far a grid can be pushed before it stops holding.",
     client: "Self-initiated",

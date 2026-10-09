@@ -37,6 +37,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* ---------- the cross-link to the other portfolio ---------- */
@@ -109,21 +111,48 @@
 }
 
 @media (max-width: 700px) {
+  /* stack headline and actions, and give the actions the full container
+     width so the email button and the social row fit inside it */
   .footer__top {
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .footer__title {
     font-size: var(--step-3);
   }
 
+  .footer__actions {
+    width: 100%;
+  }
+
   .footer__actions .btn {
     width: 100%;
     justify-content: space-between;
+    text-align: left;
+    overflow-wrap: anywhere; /* a long email must never force the page wider */
   }
 
   .footer__switch {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .footer__switch-link {
+    font-size: var(--step-1);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Very small phones: keep the email address on one line */
+@media (max-width: 380px) {
+  .footer__actions .btn {
+    padding-inline: 20px;
+    gap: 8px;
+    font-size: var(--step-xs);
   }
 }

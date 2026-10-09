@@ -268,6 +268,11 @@
 }
 
 @media (max-width: 560px) {
+  /* logo + tagline + three links can't share one phone-width row */
+  .landing__bar .wordmark__tagline {
+    display: none;
+  }
+
   .landing__nav {
     gap: 14px;
   }

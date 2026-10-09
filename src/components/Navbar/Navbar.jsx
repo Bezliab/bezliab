@@ -1,13 +1,13 @@
-import { useEffect, useMemo, useState } from 'react'
-import { ArrowRight, Menu } from 'lucide-react'
-import { navSections } from '../../data/site'
-import { usePortfolio } from '../../context/PortfolioContext'
-import { useActiveSection } from '../../hooks/useActiveSection'
-import { useScrolled } from '../../hooks/useScrolled'
-import Wordmark from '../ui/Wordmark'
-import ModeSwitch from './ModeSwitch'
-import MobileMenu from './MobileMenu'
-import './Navbar.css'
+import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, Menu } from "lucide-react";
+import { navSections } from "../../data/site";
+import { usePortfolio } from "../../context/PortfolioContext";
+import { useActiveSection } from "../../hooks/useActiveSection";
+import { useScrolled } from "../../hooks/useScrolled";
+import Wordmark from "../ui/Wordmark";
+import ModeSwitch from "./ModeSwitch";
+import MobileMenu from "./MobileMenu";
+import "./Navbar.css";
 
 /**
  * Sticky navigation, shared by both modes.
@@ -18,26 +18,26 @@ import './Navbar.css'
  * matters more on a phone than a shortcut to "Experience".
  */
 export function Navbar() {
-  const { mode } = usePortfolio()
-  const scrolled = useScrolled(24)
-  const [open, setOpen] = useState(false)
+  const { mode } = usePortfolio();
+  const scrolled = useScrolled(24);
+  const [open, setOpen] = useState(false);
 
-  const sections = navSections[mode] ?? []
-  const ids = useMemo(() => sections.map((section) => section.id), [sections])
-  const active = useActiveSection(ids)
+  const sections = navSections[mode] ?? [];
+  const ids = useMemo(() => sections.map((section) => section.id), [sections]);
+  const active = useActiveSection(ids);
 
   /* Close the menu if the viewport grows past the mobile breakpoint while
      it's open — otherwise the page stays scroll-locked behind a hidden panel. */
   useEffect(() => {
-    if (!open) return undefined
-    const query = window.matchMedia('(min-width: 1024px)')
-    const onChange = (event) => event.matches && setOpen(false)
-    query.addEventListener('change', onChange)
-    return () => query.removeEventListener('change', onChange)
-  }, [open])
+    if (!open) return undefined;
+    const query = window.matchMedia("(min-width: 1024px)");
+    const onChange = (event) => event.matches && setOpen(false);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, [open]);
 
   return (
-    <header className={`nav${scrolled ? ' is-scrolled' : ''}`}>
+    <header className={`nav${scrolled ? " is-scrolled" : ""}`}>
       <div className="nav__inner">
         <div className="nav__left">
           <Wordmark to="/" />
@@ -85,7 +85,7 @@ export function Navbar() {
         active={active}
       />
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
