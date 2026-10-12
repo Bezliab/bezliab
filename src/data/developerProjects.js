@@ -229,13 +229,13 @@ export const developerProjects = [
     technologies: ["React", "TypeScript", "PostgreSQL"],
     role: "App Developer",
     challenge:
-      "I was conversing with a friend and we wanted to play a game together. We wanted a simple game that could be played in a browser, without needing to install anything or create accounts.",
-    // but we were in different locations and didn't have a game to play.",
+      "A friend and I were reminiscing about our childhood memories and we wanted to play a familiar childhood game but we weren't in the same location.",
+    // I was conversing with a friend and we wanted to play a game together. We wanted a simple game that could be played in a browser, without needing to install anything or create accounts despite us being in different locations and we didn't have a game to play.",
     solution:
-      "A web-based Tic Tac Toe game that allows two players to play together in real-time. The game is simple, easy to use, and can be played from any device with a web browser.",
+      "A web-based Tic Tac Toe game that allows two players to play together in real-time regardless of location. The game is simple, easy to use, and can be played from any device with a web browser.",
     features: [
       "Multiple levels of difficulty",
-      // "Real-time multiplayer mode",
+      "Real-time multiplayer mode",
       "Responsive design for mobile and desktop",
       "Score tracking and game history",
     ],
