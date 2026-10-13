@@ -20,7 +20,7 @@ export const certificates = [
     title: "Advanced Diploma in Software Engineering",
     issuer: "Aptech Computer Education",
     year: "2026",
-    url: "/img/ADSE.webp", // credential link, or null
+    url: "https://drive.google.com/file/d/13gHzE-gUTCkjiO3N3kW1MvUUi4C_4uwT/view?usp=sharing", // credential link, or null
   },
 
   {
@@ -35,7 +35,7 @@ export const certificates = [
     title: "Certified Virtual Assistant",
     issuer: "ALX",
     year: "2024",
-    url: "https://…", // credential link, or null
+    url: "https://drive.google.com/file/d/1uhxeYSuT63ftdV__Pc4fGmcdk_85X2t7/view?usp=drive_link", // credential link, or null
   },
   {
     id: "After Effects",
